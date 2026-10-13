@@ -1,0 +1,26 @@
+{
+  "name": "@local/dsh-state-compaction",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Standalone state-aware compaction bundle for DeepSeek Harness: deterministic file ledger, in-flight operational continuity (todo_write, subagents, user questions, background jobs), and two-pass archivist across all presets (Standard, PTC, Scalpel, Quorum, Creator).",
+  "type": "module",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "cordis.patch.yml",
+    "lib/*.js",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "test": "node --test test/compaction.test.mjs"
+  }
+}
